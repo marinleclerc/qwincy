@@ -1,0 +1,40 @@
+<section id="{{module.module_identity}}"
+class="lp-features {% if module.content_style.padding_choice == 'classic' %}{% if module.content_style.section_type != 'none' %} section-{{ module.content_style.section_type }}{% endif %}{% if module.content_style.padding_top == false %} pt-0{% endif %}{% if module.content_style.padding_bottom == false %} pb-0{% endif %}{% endif %}"
+{% if module.content_style.padding_choice == 'custom' %} style="padding-top: {{ module.content_style.custom_padding_top }}px; padding-bottom: {{ module.content_style.custom_padding_bottom }}px;"{% endif %}>
+    <div class="container top">
+        <div class="top-blue-box" id="animated-blue-box">
+            <figure class="blue-box-logo">
+                <img src="{{module.top.left.logo.src}}" alt="{{module.top.left.logo.alt}}">
+            </figure>
+            <div class="blue-box-bars">
+                <div class="left-bar bar" data-value="{{module.top.left.left_percentage}}"></div>
+                <div class="right-bar bar" style="--percentage:{{module.top.left.right_percentage}}%;"></div>
+            </div>
+            <div class="blue-box-percentages">
+                <p class="left-percentage percentage">{{module.top.left.left_percentage}}%</p>
+                <p class="right-percentage percentage">{{module.top.left.right_percentage}}%</p>
+            </div>
+            <div class="blue-box-texts">
+                <p class="left-text text">{{module.top.left.left_text}}</p>
+                <p class="right-text text">{{module.top.left.right_text}}</p>
+            </div>
+        </div>
+        <div class="top-text">
+            <h2>{{module.top.right.top_title}}</h2>
+            <div>{{module.top.right.top_description}}</div>
+        </div>
+    </div>
+    <div class="container bottom">
+        <h2>{{module.bottom.bottom_title}}</h2>
+        <div class="bottom-list">
+        {% for item in  module.bottom.bottom_list %}
+            <div class="bottom-list-item">
+                <figure class="bottom-list-item-picto">
+                    <img src="{{item.image_field.src}}" alt="{{item.image_field.alt}}">
+                </figure>
+                <h3 class="bottom-list-item-text">{{item.text_field}}</h3>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>

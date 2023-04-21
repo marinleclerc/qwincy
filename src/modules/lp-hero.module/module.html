@@ -1,0 +1,291 @@
+<section id="{{module.module_identity}}" class="lp-hero">
+    <div class="background">
+        <div class="container">
+            <svg class="background-logo" width="616" height="606" viewBox="0 0 616 606" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g style="mix-blend-mode:overlay" opacity="0.2">
+                <path d="M552.216 491.114C527.565 466.313 505.266 442.931 481.791 420.805C472.912 412.457 474.25 406.54 478.912 396.693C516.943 316.618 503.158 218.995 443.558 160.803C385.459 104.07 314.872 92.3581 239.947 117.807C167.089 142.527 127.032 197.153 117.018 273.136C106.314 354.467 130.803 421.899 199.727 469.555C230.824 491.073 266.26 500.718 310.371 499.34C301.573 490.506 295.816 484.873 290.262 479.078C268.49 456.385 266.787 423.682 286.126 400.34C306.56 375.621 339.928 369.137 365.146 389.764C393.122 412.619 417.934 439.446 443.639 465.017C489.373 510.606 534.741 556.56 581.164 603.244C578.65 604.297 576.461 606.04 574.272 605.999C475.304 605.351 376.255 606.648 277.369 603.284C139.601 598.583 24.8209 492.978 4.22464 356.25C-20.0612 195.329 61.7159 59.2097 214.607 13.8637C380.188 -35.2113 566.284 47.7007 607.923 235.61C628.195 327.073 610.558 412.984 552.175 491.073L552.216 491.114Z" fill="white"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <div class="container" id="picture-desktop-wrapper">
+        <div class="left">
+            {{module.title}}
+            <div id="picture-responsive-wrapper"></div>
+            {% if module.form_type == "classic" %}
+            <div class="form-wrapper">
+                {% if module.form_title%}
+                    <h3 class="form-title">{{module.form_title}}</h3>
+                {% endif %}
+                {% form
+                    form_to_use="{{ module.form.form_id }}"
+                    response_response_type="{{ module.form.response_type }}"
+                    response_message="{{ module.form.message }}"
+                    response_redirect_id="{{ module.form.redirect_id }}"
+                    response_redirect_url="{{ module.form.redirect_url}}"
+                %}
+            </div>
+            {% else %}
+            <div class="copy-container multi-step-form">
+                {% if module.form_title%}
+                    <h3 class="form-title">{{module.form_title}}</h3>
+                {% endif %}
+                <div id="loader" class="loading">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M304 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm0 416a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM48 304a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm464-48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM142.9 437A48 48 0 1 0 75 369.1 48 48 0 1 0 142.9 437zm0-294.2A48 48 0 1 0 75 75a48 48 0 1 0 67.9 67.9zM369.1 437A48 48 0 1 0 437 369.1 48 48 0 1 0 369.1 437z"/></svg>
+                </div>
+                <div id="step-form" class="form">
+                    <div id="multi-step-form" class="ms-survey-from">
+                        <div class="page-center">
+
+                            <div class="ms-form-steps">
+                            </div>
+                            <div class="ms-form-section">
+
+                                {% form
+                                    form_key='{{ name }}',
+                                    form_to_use="{{ module.form.form_id }}"
+                                    response_response_type="{{ module.form.response_type }}"
+                                    response_message="{{ module.form.message }}"
+                                    response_redirect_id="{{ module.form.redirect_id }}"
+                                    response_redirect_url="{{ module.form.redirect_url}}"
+                                %}
+                            </div>
+                        </div>
+                    </div>
+                    {% require_js %}
+                    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+                    <script>
+                        window.addEventListener('message', function (event) {
+                            if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+
+                                if (event.data.id === $(".ms-form-section form").data("form-id")) {
+                                    var formid = "#multi-step-form";
+                                    $(formid + ' .hs-richtext.hs-main-font-element').parent().addClass('wrapper-point');
+
+                                    $(document).on("keypress", formid + " form", function (event) {
+                                        return event.keyCode != 13;
+                                    });
+
+                                    $(formid + ' .wrapper-point').each(function (index) {
+                                        var dataStep = "step" + (index + 1);
+                                        var step = index + 1;
+
+                                        $(this).nextUntil(".wrapper-point").addBack().wrapAll('<div data-filter=".' + dataStep + '" class="form-step-content ' + dataStep + '"  />');
+                                        $(formid + ' .ms-form-steps').append('<div class="from-step-outer ' + dataStep + '"><div class="from-step" data-filter="' + dataStep + '">  ÉTAPE ' + step + ' SUR ' + $(formid + ' .wrapper-point').length + '</div></div>');    
+                                    });
+
+                                    $(formid + ' .wrapper-point').each(function (index) {
+                                        var dataStep = "step" + (index + 1);
+                                        var step = index + 1;
+
+                                        $(formid + ' .ms-form-steps').append('<div class="from-step-line ' + dataStep + '" data-index="' + index + '"></div>');
+                                    });
+                                    
+                                    $(formid + ' .from-step-line').each(function (lineIndex){
+                                        console.log($(this))
+                                        $(this)[0].addEventListener('click', function(){
+
+                                            if($(this).hasClass('completed')){
+                                                $(formid + ' .form-step-content').each(function(contentIndex){
+                                                    if(contentIndex == lineIndex){
+                                                        $(this).addClass('active').fadeIn(500);
+                                                    }
+                                                    else{
+                                                        $(this).removeClass('active invalid').fadeOut(500) 
+                                                    }
+                                                })
+                                                
+                                                $(formid + ' .from-step-line').each(function(contentIndex){
+                                                    console.log($(this))
+                                                    if(contentIndex == lineIndex){
+                                                        $(this).addClass('active').fadeIn(500);
+                                                    }
+                                                    else{
+                                                        $(this).removeClass('active').fadeOut(500)  
+                                                    }
+                                                })
+                                                $(formid + ' .from-step-outer').each(function(outerIndex){
+                                                    if(outerIndex == lineIndex){
+                                                        $(this).addClass('active').fadeIn(500);
+                                                    }
+                                                    else{
+                                                        $(this).removeClass('active invalid').fadeOut(500) 
+                                                    }
+                                                })
+                                            }
+                                        })
+                                    })
+
+                                    $(formid + ' .form-step-content').each(function () {
+                                        if (!$(this).find('.hs-button.primary').length > 0) {
+                                            if(!$(this).hasClass('step1')){
+                                                $(this).append("<div class='button-wrapper'><a class='hs-button primary prev-btn btn p-0 m-0'>Précédent<svg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='11' cy='11' r='10.5' stroke='#DEFC36'/></svg></a><a class='hs-button disable next-btn btn primary'>Suivant<svg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='11' cy='11' r='10.5' stroke='#DEFC36'/></svg> </a ></div>");
+                                            }
+                                            else{
+                                                $(this).append("<div class='button-wrapper'><a class='hs-button disable next-btn btn primary'>Suivant<svg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='11' cy='11' r='10.5' stroke='#DEFC36'/></svg> </a ><div class='button-wrapper'>");
+                                            }
+                                            
+                                        }
+                                        else {
+                                            $(this).find('.hs-button.primary:first').css('display','none')
+                                            $(this).find('.actions').prepend("<div class='button-wrapper'><a class='hs-button btn primary prev-btn m-0 p-0'>Précédent<svg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='11' cy='11' r='10.5' stroke='#DEFC36'/></svg></a> <a class='hs-button primary next-btn btn primary m-0'>Envoyer<svg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='11' cy='11' r='10.5' stroke='#DEFC36'/></svg></a> </div>");
+                                            
+                                        }
+                                    });
+
+                                    // custom code for resizing the whole form height to remove the "height jump" when going to the next step (you can remove it if you want)
+                                        setTimeout(() => {
+                                            let stepsSizing = document.getElementsByClassName("form-step-content");
+                                            let minHeight = 0;
+                                            for (let i = 0; i < stepsSizing.length; i++) {
+                                                if (stepsSizing[i].offsetHeight > minHeight) {
+                                                    minHeight = stepsSizing[i].offsetHeight;
+                                                }
+                                            }
+                                            document.getElementsByClassName("ms-form-section")[0].style.height = minHeight + "px";
+                                        }, "500");
+                                    // end of custom code
+
+                                    $(formid + ' .form-step-content.step1, .ms-form-steps .from-step-outer:first-child, .ms-form-steps .from-step-line.step1').addClass('active');
+                                    var validity = false;
+                                    $(document).on('click', formid + '.ms-survey-from .next-btn', function () {
+                                        var el = $(this);
+                                        var element = $(this).closest('.form-step-content').find('[required]');
+                                        var elementtwo = $(this).closest('.form-step-content').find('ul[required]');
+                                        var file = $(this).closest('.form-step-content').find('input[type="file"]');
+                                        var elcount = 0;
+
+                                        var getRel = $(this).closest('.form-step-content').attr('data-filter');
+                                        if (!element.hasClass('invalid')) {
+                                            validity = true;
+                                        }
+                                        else {
+                                            validity = false;
+                                        }
+
+                                        element.each(function () {
+                                            var elnew = $(this);
+                                            $(this).focus();
+                                            $(this).blur();
+
+                                            setTimeout(function () {
+                                                elnew.blur();
+                                                if (elnew.hasClass('invalid')) {
+                                                    validity = false;
+                                                }
+
+                                            }, 300);
+                                        });
+
+                                        elementtwo.each(function () {
+                                            var elnew = $(this).find('input');
+
+                                            elnew.each(function () {
+                                                var el = $(this);
+
+
+                                                if (el.is(':checked')) {
+                                                    elcount = elcount + 1;
+                                                }
+                                            });
+
+                                            console.log(elcount);
+                                            if (elcount < 1) {
+                                                validity = false;
+                                                $(this).after('<ul class="no-list hs-error-msgs inputs-list" ><li><label >Sélectionnez au moins une option.</label></li></ul>')
+                                            }
+                                            else {
+                                                $(this).next('.hs-error-msgs').remove();
+                                            }
+
+                                            elcount = 0;
+                                        });
+
+                                        file.each(function () {
+                                            var getid = $(this).attr('id');
+
+                                            if ($(this).get(0).files.length === 0) {
+                                                validity = false;
+                                                $(this).closest('.hs-form-field').after('<ul class="no-list hs-error-msgs inputs-list" ><li><label >Sélectionnez au moins une option.</label></li></ul>');
+                                            }
+                                            else {
+                                                $(this).closest('.hs-form-field').next('.hs-error-msgs').remove();
+                                            }
+                                        });
+
+                                        $(formid).click()
+
+                                        setTimeout(function () {
+                                            if (validity) {
+
+                                                $(formid + ' .from-step-outer' + getRel).removeClass('active').addClass('completed');
+                                                $(formid + ' .from-step-outer' + getRel).next().addClass('active');
+                                                $(formid + ' .from-step-line' + getRel).removeClass('active').addClass('completed');
+                                                $(formid + ' .from-step-line' + getRel).next().addClass('active');
+                                                el.closest('.form-step-content').removeClass('active invalid').fadeOut('500', function () {
+                                                    el.closest('.form-step-content').next().addClass('active').fadeIn(500);
+                                                    validity = false;
+                                                });
+
+                                                if (el.hasClass('submit_btn')) {
+
+                                                    //$(this).next('input[type="submit"]').click();
+                                                    $(formid + ' input[type="submit"]').click();
+                                                }
+                                            } else {
+                                                el.closest('.form-step-content').addClass('invalid');
+                                            }
+                                            elcount = 0
+                                        }, 500);
+                                    });
+
+                                    $(document).on('click', formid + '.ms-survey-from input[type="checkbox"] , ' + formid + '.ms-survey-from input[type="radio"]', function () {
+                                        var el = $(this);
+                                        if (el.is(':checked')) {
+                                            el.closest('ul').next('.hs-error-msgs').remove();
+                                        }
+                                    });
+
+                                    $(document).on('change', formid + '.ms-survey-from input[type="file"]', function () {
+                                        $(this).closest('.hs-form-field').next('.hs-error-msgs').remove();
+                                    });
+
+                                    var btnval = $(formid + ' .submit_btn').next('input[type="submit"]').val();
+                                    $(formid + ' .submit_btn').text(btnval);
+
+                                    $(formid + '.ms-survey-from').on('click', '.prev-btn', function () {
+                                        var el = $(this);
+                                        var getRel = $(this).closest(formid + ' .form-step-content').attr('data-filter');
+                                        $(formid + ' .from-step-outer' + getRel).removeClass('active').removeClass('completed');
+                                        $(formid + ' .from-step-outer' + getRel).prev().addClass('active').removeClass('completed');
+                                        $(formid + ' .from-step-line' + getRel).removeClass('active').removeClass('completed');
+                                        $(formid + ' .from-step-line' + getRel).prev().addClass('active').removeClass('completed');
+                                        el.closest(formid + ' .form-step-content').removeClass('active').fadeOut('500', function () {
+                                            el.closest(formid + ' .form-step-content').prev().addClass('active').fadeIn();
+                                        });
+                                    });
+                                }
+                            };
+                        });
+                        document.onreadystatechange = function () {
+                            if (document.readyState !== "complete") {
+                                document.querySelector("#multi-step-form").style.display = "none";
+                                document.querySelector("#loader").style.visibility = "visible";
+                            } else {
+                                document.querySelector("#loader").style.display = "none";
+                                document.querySelector("#multi-step-form").style.display = "block";
+                            }
+                        };
+
+                    </script>
+                    {% end_require_js %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="right" id="responsive-image-source" >
+            <img src="{{module.image_field.src}}" alt="{{module.image_field.alt}}">
+            <p class="image-legend">{{module.image_legend}}</p>
+        </div>
+    </div>
+</section>

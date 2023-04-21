@@ -1,0 +1,19 @@
+<footer class="lp-footer section">
+    <div class="container">
+      <a class="logo-wrapper" href="{{module.logo.logo_link.url.href}}" {% if module.logo.logo_link.open_in_new_tab %}target="_blank"{% endif %}>
+        <img src="{{module.logo.logo.src}}" alt="{{module.logo.logo.alt}}">
+      </a>
+      <div class="content-wrapper">
+        {% for item in module.content%}
+          {% if item.toggle_link %}
+            <a class="footer-item link" href="{{item.link_field.url.href}}" {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}>
+              {{item.link_text}}
+            </a>
+          {% else%}
+            <p class="footer-item">{{item.link_text}}</p>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+    </div>
+</footer>

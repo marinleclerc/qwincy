@@ -1,0 +1,22 @@
+<section id="{{module.module_identity}}"
+class="banner-cta {% if module.content_style.padding_choice == 'classic' %}{% if module.content_style.section_type != 'none' %} section-{{ module.content_style.section_type }}{% endif %}{% if module.content_style.padding_top == false %} pt-0{% endif %}{% if module.content_style.padding_bottom == false %} pb-0{% endif %}{% endif %}"
+{% if module.content_style.padding_choice == 'custom' %} style="padding-top: {{ module.content_style.custom_padding_top }}px; padding-bottom: {{ module.content_style.custom_padding_bottom }}px;"{% endif %}>
+    <div class="container">
+        <div class="left">
+            <figure class="banner-picture">
+                <img src="{{module.picture.src}}" alt="{{module.picture.alt}}">
+            </figure>
+        </div>
+        <div class="right">
+            <div class="banner-text-content">
+                {{module.text_content}}
+            </div>
+            <a href="{{module.link_field.url.href}}" {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %} class="btn secondary">
+                <span>{{module.link_label}}</span>
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="10.5" stroke="#002E4D"/>
+                </svg> 
+            </a>
+        </div>
+    </div>
+</section>

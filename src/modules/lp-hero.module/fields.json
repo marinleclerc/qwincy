@@ -1,0 +1,104 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    
+    {
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Accédez aux meilleurs consultants indépendants de la finance et du chiffre" 
+    },
+    {
+        "name": "form_title",
+        "label": "Form Title",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Prêt à être accompagner ?"
+    },
+    
+    {
+        "id": "form_type",
+        "name": "form_type",
+        "label": "Form Type",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "inline_help_text": "",
+        "help_text": "",
+        "choices": [
+            [
+            "classic",
+            "Classic Form"
+            ],
+            [
+            "multi_step",
+            "Multi-step Form"
+            ]
+        ],
+        "type": "choice",
+        "placeholder": "",
+        "default": "classic"
+    },
+    {
+        "id": "form",
+        "name": "form",
+        "label": "Form",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "type": "form",
+        "default": {
+            "response_type": "inline",
+            "message": "Thanks for submitting the form."
+        }
+    },
+
+    {
+        "name": "image_field",
+        "label": "Hero illustration :",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "responsive": true,
+        "resizable": true,
+        "show_loading" : false,
+        "type": "image",
+        "default": {
+            "size_type" : "auto",
+            "src": "",
+            "alt": null,
+            "loading": "disabled"
+            }
+    },
+    {
+        "name": "image_legend",
+        "label": "Image legend :",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": "Nicolas & Fréderic, Cofondateurs de Qwincy" 
+    }
+]

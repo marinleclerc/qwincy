@@ -1,0 +1,130 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "name": "logo",
+        "label": "Logo",
+        "required": false,
+        "locked": false,
+        "children": [
+            {
+                "name": "logo",
+                "label": "Logo :",
+                "required": false,
+                "locked": false,
+                "inline_help_text": "",
+                "help_text": "",
+                "responsive": true,
+                "resizable": true,
+                "show_loading" : false,
+                "type": "image",
+                "default": {
+                    "size_type" : "auto",
+                    "src": "",
+                    "alt": null,
+                    "loading": "disabled"
+                }
+            },
+            {
+                "name" : "logo_link",
+                "label" : "Logo link :",
+                "required" : false,
+                "locked" : false,
+                "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+                "type" : "link",
+                "inline_help_text": "",
+                "help_text": "",
+                "default" : {
+                "url" : {
+                    "content_id" : null,
+                    "type" : "EXTERNAL",
+                    "href" : ""
+                },
+                "open_in_new_tab" : false,
+                "no_follow" : false
+                } 
+            }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": {} 
+    },
+    {
+    "name": "content",
+    "label": "Right content",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": null,
+      "max": null,
+      "sorting_label_field": null,
+      "default": null
+    },
+    "children": [
+        {
+            "id": "toggle_link",
+            "name": "toggle_link",
+            "label": "Is it a link ?",
+            "required": false,
+            "locked": false,
+            "type": "boolean",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": false 
+        },
+        {
+            "name": "link_text",
+            "label": "label :",
+            "required": false,
+            "locked": false,
+            "validation_regex": "",
+            "allow_new_line": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "placeholder": "",
+            "inline_help_text": "",
+            "help_text": "",
+            "default": null 
+        },
+        {
+            "name" : "link_field",
+            "label" : "Link field",
+            "required" : false,
+            "locked" : false,
+            "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+            "type" : "link",
+            "inline_help_text": "",
+            "help_text": "",
+            "default" : {
+            "url" : {
+                "content_id" : null,
+                "type" : "EXTERNAL",
+                "href" : ""
+            },
+            "open_in_new_tab" : false,
+            "no_follow" : false
+            },
+            "visibility" : 
+            {
+                "controlling_field_path" : "content.toggle_link",
+                "controlling_value_regex" : true,
+                "operator" : "EQUAL"
+            }
+        }
+    ],
+    "type": "group",
+    "inline_help_text": "",
+    "help_text": "",
+    "default": [] 
+    }
+    
+]

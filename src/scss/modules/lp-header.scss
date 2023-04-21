@@ -1,0 +1,40 @@
+.lp-header{
+    padding-top: 90px;
+    position: relative;
+    z-index: 10;
+    @media screen and (max-width:$size2) {
+        padding-top: 50px;
+    }
+    .container{
+        display: flex;
+        .logo-wrapper{
+            width: 175px;
+            height: 45px;
+            figure{
+                position: relative;
+                max-width: 175px;
+                height: 45px;
+                img{
+                    height: 100%;
+                    width: auto;
+                    object-fit: contain;
+                }
+                .motto{
+                    position: absolute;
+                    top: calc(100% + 10px);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 1.75rem;
+                    letter-spacing: 0.001em;
+                    color: white;
+                    display: block;
+                    white-space: nowrap;
+                    text-align: center;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,182 @@
+.lp-drawers{
+    @media screen and (max-width:$size2) {
+        padding-top: 90px !important;
+        padding-bottom: 0px !important;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2{
+            margin-bottom: 60px;
+        }
+        .top{
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            overflow-x: scroll;
+            @media screen and (max-width:$size1) {
+                flex-direction: column;
+                max-width: 100%;
+            }
+            h3{
+                display: inline;
+                margin-right: 30px;
+                @media screen and (max-width:$size1) {
+                    margin-right: 0px;
+                    margin-bottom: 30px;
+                    width: 100%;
+                }
+            }
+            .badges-sheath{
+                width: 100%;
+                @media screen and (max-width:$size1) {
+                    max-width: 100%;
+                    overflow-x: scroll;
+                }
+                .drawers-badges{
+                    display: flex;
+    
+                    width: fit-content;
+                    .drawers-badge{
+                        background: #F5F5F5;
+                        border-radius: 5px;
+                        padding: 15px 20px;
+                        cursor: pointer;
+                        width: fit-content;
+                        transition: all .3s ease;
+                        margin-right: 30px;
+                        overflow-x: scroll;
+                        &.active{
+                            background-color:#DFFD35;
+                        }
+                        p{
+                            font-family: $font3;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 16px;
+                            line-height: 100%;
+                            letter-spacing: 0.05em;
+                            text-transform: uppercase;
+                        }
+                        &:hover{
+                            background-color:#DFFD35;
+                        }
+                    }
+                    
+                }
+            }
+
+        }
+        .bottom{
+            background: linear-gradient(0deg, #002E4D, #002E4D), rgba(217, 217, 217, 0.2);
+            border-radius: 10px;
+            padding: 60px 60px 120px 60px;
+            position: relative;
+            @media screen and (max-width:$size1) {
+                width: fit-content;
+                padding: 30px 30px 90px 30px;
+            }
+            .drawer-wrapper{
+                display: flex;
+                justify-content: space-between;
+                opacity: 0;
+                position: absolute;
+                inset: 60px 60px 120px 60px;
+                transition: all .3s ease;
+                @media screen and (max-width:$size1) {
+                    flex-direction: column;
+                    align-items: center;
+                    width: fit-content;
+                    inset: 30px 30px 90px 30px;
+                }
+                &.active{
+                    opacity: 1;
+                    position: static;
+                }
+                .drawer-left{
+                    max-width: 480px;
+                    margin-right: 125px;
+                    @media screen and (max-width:$size1) {
+                        margin-right: 0;
+                        margin-bottom: 30px;
+                    }
+                }
+                .drawer-right{
+                    max-width: 385px;
+                    &-picture{
+                        width: 100%;
+                        margin-bottom: 30px;
+                        img{
+                            max-width: 100%;
+                            height: auto;
+                            object-fit: contain;
+                        }
+                    }
+                    .contact{
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        @media screen and (max-width:$size1) {
+                            flex-direction: column;
+                        }
+                        &-infos{
+                            @media screen and (max-width:$size1) {
+                                display: flex;
+                                margin-bottom: 15px;
+                            }
+                            &-name{
+                                font-family: $font3;
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 18px;
+                                line-height: 150%;
+                                color: white;
+                            }
+                            &-role{
+                                font-family: $font3;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 150%;
+                                color: white;
+                            }
+                        }
+                        .company-logo{
+                            height: 40px;
+                            width: fit-content;
+                            img{
+                                max-height: 40px;
+                                width: auto;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+            }
+            .drawer-navigation{
+                position: absolute;
+                bottom: 60px;
+                left: 60px;
+                width: 140px;
+                height: 40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @media screen and (max-width:$size1) {
+                    width: 280px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: 30px;
+                }
+                &-prev{
+                    cursor: pointer;
+                }
+                &-next{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

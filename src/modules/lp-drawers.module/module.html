@@ -1,0 +1,55 @@
+<section id="{{module.module_identity}}"
+class="lp-drawers {% if module.content_style.padding_choice == 'classic' %}{% if module.content_style.section_type != 'none' %} section-{{ module.content_style.section_type }}{% endif %}{% if module.content_style.padding_top == false %} pt-0{% endif %}{% if module.content_style.padding_bottom == false %} pb-0{% endif %}{% endif %}"
+{% if module.content_style.padding_choice == 'custom' %} style="padding-top: {{ module.content_style.custom_padding_top }}px; padding-bottom: {{ module.content_style.custom_padding_bottom }}px;"{% endif %}>
+    <div class="container">
+        <h2>{{module.title}}</h2>
+        <div class="top">
+            <h3>{{module.legend}}</h3>
+            <div class="badges-sheath">
+                <div class="drawers-badges">
+                    {% for drawer in module.drawers %}
+                        <div class="drawers-badge {% if loop.index0 == 0 %}active{% endif %}"><p>{{drawer.drawer_label}}</p></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            {% for drawer in module.drawers %}
+            <div class="drawer-wrapper {% if loop.index0 == 0 %}active{% endif %}">
+                <div class="drawer-left">
+                    {{drawer.drawer_content}}
+                </div>
+                <div class="drawer-right">
+                    <figure class="drawer-right-picture">
+                        <img src="{{drawer.drawer_picture.src}}" alt="{{drawer.drawer_picture.alt}}">
+                    </figure>
+                    <div class="contact">
+                        <div class="contact-infos">
+                            <p class="contact-infos-name">{{drawer.drawer_contact}}</p>
+                            <p class="contact-infos-role">{{drawer.drawer_contact_role}}</p>
+                        </div>
+                        <figure class="company-logo">
+                            <img src="{{drawer.drawer_company_logo.src}}" alt="{{drawer.drawer_company_logo.alt}}">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="drawer-navigation">
+                <div class="drawer-navigation-prev" id="drawer-navigation-prev">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" transform="rotate(-180 20 20)" fill="#004879" fill-opacity="0.7"/>
+                        <path d="M18.8296 19.7053C18.6669 19.868 18.6669 20.1319 18.8296 20.2946L23.8388 25.3037C24.3268 25.7918 24.3268 26.5831 23.8388 27.0712V27.0712C23.3507 27.5593 22.5593 27.5593 22.0713 27.0712L16.0376 21.0376C15.4646 20.4645 15.4646 19.5354 16.0376 18.9623L22.0713 12.9287C22.5593 12.4406 23.3507 12.4406 23.8388 12.9287V12.9287C24.3268 13.4168 24.3268 14.2081 23.8388 14.6962L18.8296 19.7053Z" fill="#DFFD35"/>
+                    </svg>  
+                </div>
+                
+                <div class="drawer-navigation-next" id="drawer-navigation-next">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="20" fill="#004879" fill-opacity="0.7"/>
+                        <path d="M21.1704 20.2947C21.3331 20.132 21.3331 19.8681 21.1704 19.7054L16.1612 14.6963C15.6732 14.2082 15.6732 13.4169 16.1612 12.9288C16.6493 12.4407 17.4407 12.4407 17.9287 12.9288L23.9624 18.9624C24.5354 19.5355 24.5354 20.4646 23.9624 21.0377L17.9287 27.0713C17.4407 27.5594 16.6493 27.5594 16.1612 27.0713C15.6732 26.5832 15.6732 25.7919 16.1612 25.3038L21.1704 20.2947Z" fill="#DFFD35"/>
+                    </svg>                                
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

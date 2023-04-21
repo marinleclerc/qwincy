@@ -1,0 +1,396 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_style",
+        "label": "Content Style",
+        "children": [
+            {
+                "id": "padding_choice",
+                "name": "padding_choice",
+                "label": "Padding Choice",
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "inline_help_text": "",
+                "help_text": "",
+                "choices": [
+                    [
+                    "classic",
+                    "Classic"
+                    ],
+                    [
+                    "custom",
+                    "Custom"
+                    ]
+                ],
+                "type": "choice",
+                "placeholder": "",
+                "default": "classic"
+            },
+            {
+                "name": "section_type",
+                "label": "Section Type",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "visibility": {
+                    "controlling_field": "padding_choice",
+                    "controlling_value_regex": "classic",
+                    "operator": "EQUAL"
+                },
+                "choices": [
+                    [
+                        "none",
+                        "None"
+                    ],
+                    [
+                        "sm",
+                        "Small"
+                    ],
+                    [
+                        "md",
+                        "Normal"
+                    ],
+                    [
+                        "lg",
+                        "Big"
+                    ],
+                    [
+                        "xl",
+                        "Giant"
+                    ]
+                ],
+                "type": "choice",
+                "default": "none"
+            },
+            {
+                "name": "padding_bottom",
+                "label": "Padding Bottom",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true,
+                "visibility": {
+                    "controlling_field": "padding_choice",
+                    "controlling_value_regex": "classic",
+                    "operator": "EQUAL"
+                }
+            },
+            {
+                "name": "padding_top",
+                "label": "Padding Top",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true,
+                "visibility": {
+                    "controlling_field": "padding_choice",
+                    "controlling_value_regex": "classic",
+                    "operator": "EQUAL"
+                }
+            },
+            {
+                "name" : "custom_padding_top",
+                "label" : "Padding Top",
+                "required" : false,
+                "locked" : false,
+                "display" : "text",
+                "step" : 1,
+                "type" : "number",
+                "min" : 0,
+                "max" : null,
+                "inline_help_text": "",
+                "help_text": "",
+                "default" : 0,
+                "visibility": {
+                    "controlling_field": "padding_choice",
+                    "controlling_value_regex": "custom",
+                    "operator": "EQUAL"
+                }
+            },
+            {
+                "name" : "custom_padding_bottom",
+                "label" : "Padding Bottom",
+                "required" : false,
+                "locked" : false,
+                "display" : "text",
+                "step" : 1,
+                "type" : "number",
+                "min" : 0,
+                "max" : null,
+                "inline_help_text": "",
+                "help_text": "",
+                "default" : 0,
+                "visibility": {
+                    "controlling_field": "padding_choice",
+                    "controlling_value_regex": "custom",
+                    "operator": "EQUAL"
+                }
+            }
+        ]
+    },
+    {
+        "id":"swiper_toggler",
+        "name": "swiper_toggler",
+        "label": "Swiper on right side ?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": false 
+    },
+    {
+        "name": "left",
+        "label": "Left",
+        "required": false,
+        "locked": false,
+        "children": [
+            {
+                "name": "title",
+                "label": "Title",
+                "required": false,
+                "locked": false,
+                "validation_regex": "",
+                "allow_new_line": false,
+                "show_emoji_picker": false,
+                "type": "text",
+                "placeholder": "",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": null 
+            },
+            {
+                "name": "description",
+                "label": "Description",
+                "required": false,
+                "locked": false,
+                "type": "richtext",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": null 
+            },
+            {
+                "name": "accordions",
+                "label": "Accordions",
+                "required": false,
+                "locked": false,
+                "occurrence": {
+                "min": null,
+                "max": null,
+                "sorting_label_field": null,
+                "default": null
+                },
+                "children": [
+                    {
+                        "name": "item_title",
+                        "label": "Item title",
+                        "required": false,
+                        "locked": false,
+                        "validation_regex": "",
+                        "allow_new_line": false,
+                        "show_emoji_picker": false,
+                        "type": "text",
+                        "placeholder": "",
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "default": null 
+                    },
+                    {
+                        "name": "item_picto",
+                        "label": "Item picto",
+                        "required": false,
+                        "locked": false,
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "responsive": true,
+                        "resizable": true,
+                        "show_loading" : false,
+                        "type": "image",
+                        "default": {
+                            "size_type" : "auto",
+                            "src": "",
+                            "alt": null,
+                            "loading": "disabled"
+                        }
+                    },
+                    {
+                        "name": "item_description",
+                        "label": "Item description",
+                        "required": false,
+                        "locked": false,
+                        "type": "richtext",
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "default": null 
+                    },
+                    {
+                        "name": "item_picture",
+                        "label": "Item picture",
+                        "required": false,
+                        "locked": false,
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "responsive": true,
+                        "resizable": true,
+                        "show_loading" : false,
+                        "type": "image",
+                        "default": {
+                            "size_type" : "auto",
+                            "src": "",
+                            "alt": null,
+                            "loading": "disabled"
+                        }
+                    }
+                ],
+                "type": "group",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": [] 
+            }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": {} 
+    },
+    {
+        "name": "right",
+        "label": "Right",
+        "required": false,
+        "locked": false,
+        "children": [
+            {
+                "name": "swiper_content",
+                "label": "Swiper content",
+                "required": false,
+                "locked": false,
+                "occurrence": {
+                "min": null,
+                "max": null,
+                "sorting_label_field": null,
+                "default": null
+                },
+                "children": [
+                    {
+                        "name": "slide_picture",
+                        "label": "Slide picture",
+                        "required": false,
+                        "locked": false,
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "responsive": true,
+                        "resizable": true,
+                        "show_loading" : false,
+                        "type": "image",
+                        "default": {
+                            "size_type" : "auto",
+                            "src": "",
+                            "alt": null,
+                            "loading": "disabled"
+                        }
+                    },
+                    {
+                        "name": "contact_name",
+                        "label": "Contact name",
+                        "required": false,
+                        "locked": false,
+                        "validation_regex": "",
+                        "allow_new_line": false,
+                        "show_emoji_picker": false,
+                        "type": "text",
+                        "placeholder": "",
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "default": null 
+                    },
+                    {
+                        "name": "contact_role",
+                        "label": "Contact position",
+                        "required": false,
+                        "locked": false,
+                        "validation_regex": "",
+                        "allow_new_line": false,
+                        "show_emoji_picker": false,
+                        "type": "text",
+                        "placeholder": "",
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "default": null 
+                    },
+                    {
+                        "name": "slide_picto",
+                        "label": "Contact picto",
+                        "required": false,
+                        "locked": false,
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "responsive": true,
+                        "resizable": true,
+                        "show_loading" : false,
+                        "type": "image",
+                        "default": {
+                            "size_type" : "auto",
+                            "src": "",
+                            "alt": null,
+                            "loading": "disabled"
+                        }
+                    },
+                    {
+                        "name": "slide_text_content",
+                        "label": "Slide text content",
+                        "required": false,
+                        "locked": false,
+                        "validation_regex": "",
+                        "allow_new_line": false,
+                        "show_emoji_picker": false,
+                        "type": "text",
+                        "placeholder": "",
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "default": null 
+                    },
+                    {
+                        "name": "slide_logo",
+                        "label": "Slide logo",
+                        "required": false,
+                        "locked": false,
+                        "inline_help_text": "",
+                        "help_text": "",
+                        "responsive": true,
+                        "resizable": true,
+                        "show_loading" : false,
+                        "type": "image",
+                        "default": {
+                            "size_type" : "auto",
+                            "src": "",
+                            "alt": null,
+                            "loading": "disabled"
+                        }
+                    }
+                ],
+                "type": "group",
+                "inline_help_text": "",
+                "help_text": "",
+                "default": [] 
+            }
+        ],
+        "type": "group",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": {} 
+    }
+]

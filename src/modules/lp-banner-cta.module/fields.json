@@ -1,0 +1,205 @@
+[
+    {
+        "name": "module_identity",
+        "label": "Module ID",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text"
+    },
+    {
+        "type": "group",
+        "name": "content_style",
+        "label": "Content Style",
+        "children": [
+            {
+                "id": "padding_choice",
+                "name": "padding_choice",
+                "label": "Padding Choice",
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "inline_help_text": "",
+                "help_text": "",
+                "choices": [
+                    [
+                    "classic",
+                    "Classic"
+                    ],
+                    [
+                    "custom",
+                    "Custom"
+                    ]
+                ],
+                "type": "choice",
+                "placeholder": "",
+                "default": "classic"
+            },
+            {
+                "name": "section_type",
+                "label": "Section Type",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "display": "select",
+                "visibility": {
+                    "controlling_field": "padding_choice",
+                    "controlling_value_regex": "classic",
+                    "operator": "EQUAL"
+                },
+                "choices": [
+                    [
+                        "none",
+                        "None"
+                    ],
+                    [
+                        "sm",
+                        "Small"
+                    ],
+                    [
+                        "md",
+                        "Normal"
+                    ],
+                    [
+                        "lg",
+                        "Big"
+                    ],
+                    [
+                        "xl",
+                        "Giant"
+                    ]
+                ],
+                "type": "choice",
+                "default": "none"
+            },
+            {
+                "name": "padding_bottom",
+                "label": "Padding Bottom",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true,
+                "visibility": {
+                    "controlling_field": "padding_choice",
+                    "controlling_value_regex": "classic",
+                    "operator": "EQUAL"
+                }
+            },
+            {
+                "name": "padding_top",
+                "label": "Padding Top",
+                "sortable": false,
+                "required": false,
+                "locked": false,
+                "type": "boolean",
+                "default": true,
+                "visibility": {
+                    "controlling_field": "padding_choice",
+                    "controlling_value_regex": "classic",
+                    "operator": "EQUAL"
+                }
+            },
+            {
+                "name" : "custom_padding_top",
+                "label" : "Padding Top",
+                "required" : false,
+                "locked" : false,
+                "display" : "text",
+                "step" : 1,
+                "type" : "number",
+                "min" : 0,
+                "max" : null,
+                "inline_help_text": "",
+                "help_text": "",
+                "default" : 0,
+                "visibility": {
+                    "controlling_field": "padding_choice",
+                    "controlling_value_regex": "custom",
+                    "operator": "EQUAL"
+                }
+            },
+            {
+                "name" : "custom_padding_bottom",
+                "label" : "Padding Bottom",
+                "required" : false,
+                "locked" : false,
+                "display" : "text",
+                "step" : 1,
+                "type" : "number",
+                "min" : 0,
+                "max" : null,
+                "inline_help_text": "",
+                "help_text": "",
+                "default" : 0,
+                "visibility": {
+                    "controlling_field": "padding_choice",
+                    "controlling_value_regex": "custom",
+                    "operator": "EQUAL"
+                }
+            }
+        ]
+    },
+    {
+        "name": "text_content",
+        "label": "Right text content",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null 
+    },
+    {
+        "name": "link_label",
+        "label": "Right cta label",
+        "required": false,
+        "locked": false,
+        "validation_regex": "",
+        "allow_new_line": false,
+        "show_emoji_picker": false,
+        "type": "text",
+        "placeholder": "",
+        "inline_help_text": "",
+        "help_text": "",
+        "default": null 
+    },
+    {
+        "name" : "link_field",
+        "label" : "Right cta link field",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+        "type" : "link",
+        "inline_help_text": "",
+        "help_text": "",
+        "default" : {
+        "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+        } 
+    },
+    {
+        "name": "picture",
+        "label": "Left picture",
+        "required": false,
+        "locked": false,
+        "inline_help_text": "",
+        "help_text": "",
+        "responsive": true,
+        "resizable": true,
+        "show_loading" : false,
+        "type": "image",
+        "default": {
+        "size_type" : "auto",
+        "src": "",
+        "alt": null,
+        "loading": "disabled"}
+    }
+]

@@ -1,0 +1,264 @@
+.lp-reviews{
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 10.5C8 9.11929 9.11929 8 10.5 8C11.8807 8 13 9.11929 13 10.5C13 11.8807 11.8807 13 10.5 13C9.11929 13 8 11.8807 8 10.5Z' fill='%237B92A1'/%3E%3C/svg%3E%0A");
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: center;
+    position: relative;
+    @media screen and (max-width:$size2) {
+        padding-top: 90px !important;
+        padding-bottom: 100px !important;
+        background-image: none;
+    }
+    &::after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: rgb(255,255,255);
+        background: linear-gradient(58deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,1) 27%);
+        z-index: 1;
+        
+    }
+    .container{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        z-index: 2;
+        @media screen and (max-width:$size1) {
+            flex-direction: column;
+            align-items: center;
+        }
+        .left{
+            
+            max-width: 445px;
+            h2{
+                margin-bottom: 45px;
+            }
+            .description{
+                margin-bottom: 45px;
+            }
+            .btn{
+                width: fit-content;
+            }
+            @media screen and (max-width:$size1) {
+                margin-bottom: 90px;
+            }
+        }
+        .right{
+            max-width: 540px;
+            width: 100%;
+            .google-reviews{
+                display: flex;
+                margin-bottom: 45px;
+                gap: 50px;
+                @media screen and (max-width:$size1) {
+                    flex-direction: column;
+                    max-width: 445px;
+                    margin: 0 auto 30px auto;
+                    gap: 30px;
+                }
+                .global-review{
+                    @media screen and (max-width:$size1) {
+                        display: flex;
+                    }
+                    .big-number{
+                        font-family: $font3;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 50px;
+                        line-height: 100%;
+                        margin-bottom: 10px;
+                        @media screen and (max-width:$size1) {
+                            margin-right: 10px;
+                            margin-bottom: 0px;
+                        }
+                    }
+                    .star-link-wrapper{
+
+                        @media screen and (max-width:$size1) {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                        }
+                        .stars{
+                            width: 100%;
+                            position: relative;
+                            margin-bottom: 10px;
+                            width: 110px;
+                            @media screen and (max-width:$size1) {
+                                margin-bottom: 0px;
+                            }
+                            .empty-stars{
+                                display: block;
+                                mask-image: url("data:image/svg+xml,%3Csvg width='90' height='14' viewBox='0 0 90 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_5_27)'%3E%3Cg filter='url(%23filter0_d_5_27)'%3E%3Cpath d='M6.98397 -0.0221283L6.93913 -0.112977L6.89429 -0.0221283L4.86657 4.08649L0.332436 4.74534L0.232178 4.75991L0.304726 4.83062L3.58566 8.02874L2.81113 12.5445L2.794 12.6444L2.88368 12.5973L6.93913 10.4652L10.9945 12.5973L11.0842 12.6444L11.0671 12.5445L10.2926 8.02874L13.5735 4.83062L13.646 4.75991L13.5458 4.74534L9.01169 4.08649L6.98397 -0.0221283Z' stroke='%23FFC83C' stroke-width='0.1' shape-rendering='crispEdges'/%3E%3C/g%3E%3Cpath d='M25.8623 -0.0221287L25.8175 -0.112978L25.7727 -0.0221278L23.745 4.08649L19.2108 4.74534L19.1106 4.75991L19.1831 4.83062L22.4641 8.02874L21.6895 12.5445L21.6724 12.6444L21.7621 12.5973L25.8175 10.4652L29.873 12.5973L29.9627 12.6444L29.9456 12.5445L29.171 8.02874L32.452 4.83062L32.5246 4.75991L32.4243 4.74534L27.8901 4.08649L25.8623 -0.0221287Z' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M44.7403 -0.0221278L44.6955 -0.112978L44.6507 -0.0221286L42.6229 4.08649L38.0888 4.74534L37.9886 4.75991L38.0611 4.83062L41.342 8.02874L40.5675 12.5445L40.5504 12.6444L40.6401 12.5973L44.6955 10.4652L48.7509 12.5973L48.8406 12.6444L48.8235 12.5445L48.0489 8.02874L51.3299 4.83062L51.4024 4.75991L51.3022 4.74534L46.768 4.08649L44.7403 -0.0221278Z' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M63.6187 -0.0221286L63.5739 -0.112976L63.5291 -0.0221286L61.5013 4.08649L56.9672 4.74534L56.8669 4.75991L56.9395 4.83062L60.2204 8.02874L59.4459 12.5445L59.4288 12.6444L59.5185 12.5973L63.5739 10.4652L67.6293 12.5973L67.719 12.6444L67.7019 12.5445L66.9273 8.02874L70.2083 4.83062L70.2808 4.75991L70.1806 4.74534L65.6465 4.08649L63.6187 -0.0221286Z' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M82.4971 -0.0221286L82.4523 -0.112978L82.4075 -0.0221278L80.3798 4.08649L75.8456 4.74534L75.7453 4.75991L75.8179 4.83062L79.0989 8.02874L78.3243 12.5445L78.3072 12.6444L78.3969 12.5973L82.4523 10.4652L86.5077 12.5973L86.5974 12.6444L86.5803 12.5445L85.8058 8.02874L89.0867 4.83062L89.1593 4.75991L89.059 4.74534L84.5249 4.08649L82.4971 -0.0221286Z' stroke='%23FFC83C' stroke-width='0.1'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_5_27' x='-3.87527' y='-0.225955' width='21.6288' height='20.9618' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='4'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_5_27'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_5_27' result='shape'/%3E%3C/filter%3E%3CclipPath id='clip0_5_27'%3E%3Crect width='90' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+                                mask-size:110px;
+                                mask-repeat: no-repeat;
+                                width: 110px;
+                                height: 30px;
+                                background-color: #FFC83C;
+                            }
+                            .full-stars{
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                width: calc(var(--width)*20%);
+                                height: 30px;
+                                bottom: 0;
+                                mask-image: url("data:image/svg+xml,%3Csvg width='90' height='14' viewBox='0 0 90 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_5_27)'%3E%3Cg filter='url(%23filter0_d_5_27)'%3E%3Cpath d='M6.93913 0L8.97849 4.13219L13.5386 4.79482L10.2389 8.01128L11.0178 12.553L6.93913 10.4087L2.86041 12.553L3.63938 8.01128L0.339626 4.79482L4.89977 4.13219L6.93913 0Z' fill='%23FFC83C'/%3E%3Cpath d='M6.98397 -0.0221283L6.93913 -0.112977L6.89429 -0.0221283L4.86657 4.08649L0.332436 4.74534L0.232178 4.75991L0.304726 4.83062L3.58566 8.02874L2.81113 12.5445L2.794 12.6444L2.88368 12.5973L6.93913 10.4652L10.9945 12.5973L11.0842 12.6444L11.0671 12.5445L10.2926 8.02874L13.5735 4.83062L13.646 4.75991L13.5458 4.74534L9.01169 4.08649L6.98397 -0.0221283Z' stroke='%23FFC83C' stroke-width='0.1'/%3E%3C/g%3E%3Cpath d='M25.8623 -0.0221287L25.8175 -0.112978L25.7727 -0.0221278L23.745 4.08649L19.2108 4.74534L19.1106 4.75991L19.1831 4.83062L22.4641 8.02874L21.6895 12.5445L21.6724 12.6444L21.7621 12.5973L25.8175 10.4652L29.873 12.5973L29.9627 12.6444L29.9456 12.5445L29.171 8.02874L32.452 4.83062L32.5246 4.75991L32.4243 4.74534L27.8901 4.08649L25.8623 -0.0221287Z' fill='%23FFC83C' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M44.7403 -0.0221278L44.6955 -0.112978L44.6507 -0.0221286L42.6229 4.08649L38.0888 4.74534L37.9886 4.75991L38.0611 4.83062L41.342 8.02874L40.5675 12.5445L40.5504 12.6444L40.6401 12.5973L44.6955 10.4652L48.7509 12.5973L48.8406 12.6444L48.8235 12.5445L48.0489 8.02874L51.3299 4.83062L51.4024 4.75991L51.3022 4.74534L46.768 4.08649L44.7403 -0.0221278Z' fill='%23FFC83C' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M63.6187 -0.0221286L63.5739 -0.112976L63.5291 -0.0221286L61.5013 4.08649L56.9672 4.74534L56.8669 4.75991L56.9395 4.83062L60.2204 8.02874L59.4459 12.5445L59.4288 12.6444L59.5185 12.5973L63.5739 10.4652L67.6293 12.5973L67.719 12.6444L67.7019 12.5445L66.9273 8.02874L70.2083 4.83062L70.2808 4.75991L70.1806 4.74534L65.6465 4.08649L63.6187 -0.0221286Z' fill='%23FFC83C' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M82.4971 -0.0221286L82.4523 -0.112978L82.4075 -0.0221278L80.3798 4.08649L75.8456 4.74534L75.7453 4.75991L75.8179 4.83062L79.0989 8.02874L78.3243 12.5445L78.3072 12.6444L78.3969 12.5973L82.4523 10.4652L86.5077 12.5973L86.5974 12.6444L86.5803 12.5445L85.8058 8.02874L89.0867 4.83062L89.1593 4.75991L89.059 4.74534L84.5249 4.08649L82.4971 -0.0221286Z' fill='%23FFC83C' stroke='%23FFC83C' stroke-width='0.1'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_5_27' x='-3.87527' y='-0.225955' width='21.6288' height='20.9618' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='4'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_5_27'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_5_27' result='shape'/%3E%3C/filter%3E%3CclipPath id='clip0_5_27'%3E%3Crect width='90' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+                                background-color: #FFC83C;
+                                mask-size: 110px;
+                                mask-repeat: no-repeat;
+                            }
+                        }
+                        .global-review-link{
+                            font-family: $font3;
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 150%;
+                            text-decoration-line: underline;
+                        }
+                    }
+
+
+                }
+                .google-reviews-swiper{
+                    position: relative;
+                    max-width: 400px;
+
+                    &-navigation{
+                        position: absolute;
+                        inset: 30px 30px auto auto;
+                        display: flex;
+                        gap: 30px;
+                        z-index: 3;
+
+                        &-prev{
+
+                        }
+                        &-next{
+
+                        }
+                    }
+                    .swiper-wrapper{
+                        .swiper-slide{
+                            padding: 30px;
+                            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+                            border-radius: 5px;
+                            opacity: 0;
+                            transition: all .5s ease;
+                            @media screen and (max-width:$size1) {
+                                padding: 20px;
+                            }
+                            &-active{
+                                opacity: 1;
+                            }
+                            .review-link{
+                                .infos{
+                                    display: flex;
+                                    margin-bottom: 15px;
+                                    .note{
+                                        max-width: 75px;
+                                        padding-right: 15px;
+                                        border-right: 1px solid #7B92A1;
+                                        .big-number{
+                                            font-family: $font3;
+                                            font-style: normal;
+                                            font-weight: 700;
+                                            font-size: 30px;
+                                            line-height: 100%; 
+                                            margin-bottom: 10px; 
+                                        }
+                                        .stars{
+                                            max-width: 60px;
+                                            position: relative;
+                                            height: 15px;
+                                            .empty-stars{
+                                                display: block;
+                                                mask-image: url("data:image/svg+xml,%3Csvg width='90' height='14' viewBox='0 0 90 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_5_27)'%3E%3Cg filter='url(%23filter0_d_5_27)'%3E%3Cpath d='M6.98397 -0.0221283L6.93913 -0.112977L6.89429 -0.0221283L4.86657 4.08649L0.332436 4.74534L0.232178 4.75991L0.304726 4.83062L3.58566 8.02874L2.81113 12.5445L2.794 12.6444L2.88368 12.5973L6.93913 10.4652L10.9945 12.5973L11.0842 12.6444L11.0671 12.5445L10.2926 8.02874L13.5735 4.83062L13.646 4.75991L13.5458 4.74534L9.01169 4.08649L6.98397 -0.0221283Z' stroke='%23FFC83C' stroke-width='0.1' shape-rendering='crispEdges'/%3E%3C/g%3E%3Cpath d='M25.8623 -0.0221287L25.8175 -0.112978L25.7727 -0.0221278L23.745 4.08649L19.2108 4.74534L19.1106 4.75991L19.1831 4.83062L22.4641 8.02874L21.6895 12.5445L21.6724 12.6444L21.7621 12.5973L25.8175 10.4652L29.873 12.5973L29.9627 12.6444L29.9456 12.5445L29.171 8.02874L32.452 4.83062L32.5246 4.75991L32.4243 4.74534L27.8901 4.08649L25.8623 -0.0221287Z' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M44.7403 -0.0221278L44.6955 -0.112978L44.6507 -0.0221286L42.6229 4.08649L38.0888 4.74534L37.9886 4.75991L38.0611 4.83062L41.342 8.02874L40.5675 12.5445L40.5504 12.6444L40.6401 12.5973L44.6955 10.4652L48.7509 12.5973L48.8406 12.6444L48.8235 12.5445L48.0489 8.02874L51.3299 4.83062L51.4024 4.75991L51.3022 4.74534L46.768 4.08649L44.7403 -0.0221278Z' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M63.6187 -0.0221286L63.5739 -0.112976L63.5291 -0.0221286L61.5013 4.08649L56.9672 4.74534L56.8669 4.75991L56.9395 4.83062L60.2204 8.02874L59.4459 12.5445L59.4288 12.6444L59.5185 12.5973L63.5739 10.4652L67.6293 12.5973L67.719 12.6444L67.7019 12.5445L66.9273 8.02874L70.2083 4.83062L70.2808 4.75991L70.1806 4.74534L65.6465 4.08649L63.6187 -0.0221286Z' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M82.4971 -0.0221286L82.4523 -0.112978L82.4075 -0.0221278L80.3798 4.08649L75.8456 4.74534L75.7453 4.75991L75.8179 4.83062L79.0989 8.02874L78.3243 12.5445L78.3072 12.6444L78.3969 12.5973L82.4523 10.4652L86.5077 12.5973L86.5974 12.6444L86.5803 12.5445L85.8058 8.02874L89.0867 4.83062L89.1593 4.75991L89.059 4.74534L84.5249 4.08649L82.4971 -0.0221286Z' stroke='%23FFC83C' stroke-width='0.1'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_5_27' x='-3.87527' y='-0.225955' width='21.6288' height='20.9618' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='4'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_5_27'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_5_27' result='shape'/%3E%3C/filter%3E%3CclipPath id='clip0_5_27'%3E%3Crect width='90' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+                                                mask-size: 60px;
+                                                mask-repeat: no-repeat;
+                                                width: 60px;
+                                                height: 15px;
+                                                background-color: #FFC83C;
+                                            }
+                                            .full-stars{
+                                                content: '';
+                                                display: block;
+                                                position: absolute;
+                                                width: calc(var(--width)*20%);
+                                                height: 15px;
+                                                bottom: 0;
+                                                mask-image: url("data:image/svg+xml,%3Csvg width='90' height='14' viewBox='0 0 90 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_5_27)'%3E%3Cg filter='url(%23filter0_d_5_27)'%3E%3Cpath d='M6.93913 0L8.97849 4.13219L13.5386 4.79482L10.2389 8.01128L11.0178 12.553L6.93913 10.4087L2.86041 12.553L3.63938 8.01128L0.339626 4.79482L4.89977 4.13219L6.93913 0Z' fill='%23FFC83C'/%3E%3Cpath d='M6.98397 -0.0221283L6.93913 -0.112977L6.89429 -0.0221283L4.86657 4.08649L0.332436 4.74534L0.232178 4.75991L0.304726 4.83062L3.58566 8.02874L2.81113 12.5445L2.794 12.6444L2.88368 12.5973L6.93913 10.4652L10.9945 12.5973L11.0842 12.6444L11.0671 12.5445L10.2926 8.02874L13.5735 4.83062L13.646 4.75991L13.5458 4.74534L9.01169 4.08649L6.98397 -0.0221283Z' stroke='%23FFC83C' stroke-width='0.1'/%3E%3C/g%3E%3Cpath d='M25.8623 -0.0221287L25.8175 -0.112978L25.7727 -0.0221278L23.745 4.08649L19.2108 4.74534L19.1106 4.75991L19.1831 4.83062L22.4641 8.02874L21.6895 12.5445L21.6724 12.6444L21.7621 12.5973L25.8175 10.4652L29.873 12.5973L29.9627 12.6444L29.9456 12.5445L29.171 8.02874L32.452 4.83062L32.5246 4.75991L32.4243 4.74534L27.8901 4.08649L25.8623 -0.0221287Z' fill='%23FFC83C' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M44.7403 -0.0221278L44.6955 -0.112978L44.6507 -0.0221286L42.6229 4.08649L38.0888 4.74534L37.9886 4.75991L38.0611 4.83062L41.342 8.02874L40.5675 12.5445L40.5504 12.6444L40.6401 12.5973L44.6955 10.4652L48.7509 12.5973L48.8406 12.6444L48.8235 12.5445L48.0489 8.02874L51.3299 4.83062L51.4024 4.75991L51.3022 4.74534L46.768 4.08649L44.7403 -0.0221278Z' fill='%23FFC83C' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M63.6187 -0.0221286L63.5739 -0.112976L63.5291 -0.0221286L61.5013 4.08649L56.9672 4.74534L56.8669 4.75991L56.9395 4.83062L60.2204 8.02874L59.4459 12.5445L59.4288 12.6444L59.5185 12.5973L63.5739 10.4652L67.6293 12.5973L67.719 12.6444L67.7019 12.5445L66.9273 8.02874L70.2083 4.83062L70.2808 4.75991L70.1806 4.74534L65.6465 4.08649L63.6187 -0.0221286Z' fill='%23FFC83C' stroke='%23FFC83C' stroke-width='0.1'/%3E%3Cpath d='M82.4971 -0.0221286L82.4523 -0.112978L82.4075 -0.0221278L80.3798 4.08649L75.8456 4.74534L75.7453 4.75991L75.8179 4.83062L79.0989 8.02874L78.3243 12.5445L78.3072 12.6444L78.3969 12.5973L82.4523 10.4652L86.5077 12.5973L86.5974 12.6444L86.5803 12.5445L85.8058 8.02874L89.0867 4.83062L89.1593 4.75991L89.059 4.74534L84.5249 4.08649L82.4971 -0.0221286Z' fill='%23FFC83C' stroke='%23FFC83C' stroke-width='0.1'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d_5_27' x='-3.87527' y='-0.225955' width='21.6288' height='20.9618' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dy='4'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_5_27'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_5_27' result='shape'/%3E%3C/filter%3E%3CclipPath id='clip0_5_27'%3E%3Crect width='90' height='14' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+                                                background-color: #FFC83C;
+                                                mask-size: 60px;
+                                                mask-repeat: no-repeat;
+                                            }
+                                        }
+                                    }
+                                    .contact{
+                                        margin-left: 15px;
+                                        .company{
+                                            font-family: $font3;
+                                            font-style: normal;
+                                            font-weight: 700;
+                                            font-size: 16px;
+                                            line-height: 150%;
+                                        }
+                                        .person{
+                                            font-family: $font3;
+                                            font-style: normal;
+                                            font-weight: 500;
+                                            font-size: 14px;
+                                            line-height: 150%;
+                                        }
+                                    }
+                                }
+                                .review{
+                                    
+                                }
+                            }
+                        }
+                    }   
+                }
+            }
+            .clients{
+                width: 100%;
+                .logo-wrapper{
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    @media screen and (max-width:$size5) {
+                        gap: 15px;
+                        justify-content: space-between;
+                    }
+                    @media screen and (max-width:$size4) {
+                        gap: 15px;
+                        justify-content: center;
+                    }
+                    .client-logo{
+                        max-width: 30%;
+                        width: 100%;
+                        padding: 15px 0;
+                        background: #FFFFFF;
+                        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+                        border-radius: 5px;
+                        margin-bottom: 30px;
+                        min-width: 170px;
+                        img{
+                            max-width: 115px;
+                            display: block;
+                            object-fit: contain;
+                            max-height: 40px;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}

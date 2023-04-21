@@ -1,0 +1,77 @@
+<section id="{{module.module_identity}}"
+class="lp-accordion {% if module.swiper_toggler %}swiper-style{% endif %} {% if module.content_style.padding_choice == 'classic' %}{% if module.content_style.section_type != 'none' %} section-{{ module.content_style.section_type }}{% endif %}{% if module.content_style.padding_top == false %} pt-0{% endif %}{% if module.content_style.padding_bottom == false %} pb-0{% endif %}{% endif %}"
+{% if module.content_style.padding_choice == 'custom' %} style="padding-top: {{ module.content_style.custom_padding_top }}px; padding-bottom: {{ module.content_style.custom_padding_bottom }}px;"{% endif %}>
+    <div class="container">
+        <h2>{{module.left.title}}</h2>
+    </div>
+    <div class="container">
+
+        <div class="left">
+            <div class="description">{{module.left.description}}</div>
+            {% for item in module.left.accordions %}
+                <div class="accordion">
+                    <div class="accordion-top">
+                        <img class="accordion-picto" src="{{item.item_picto.src}}" alt="{{item.item_picto.alt}}">
+                        <h3>{{item.item_title}}</h3>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-content-text">{{item.item_description}}</p>
+                        {% if !module.swiper_toggler %}
+                            <figure class="embeded-picture">
+                                <img src="{{item.item_picture.src}}" alt="{{item.item_picture.alt}}">
+                            </figure>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="right {% if module.swiper_toggler %}swiper-style{% endif %}">
+            {% if !module.swiper_toggler %}
+                {% for item in module.left.accordions %}
+                    <figure class="embeded-picture-right {% if loop.index0 == 0 %}active{% endif %}">
+                        <img src="{{item.item_picture.src}}" alt="{{item.item_picture.alt}}">
+                    </figure>
+                {% endfor %}
+            {% else %}
+                <div class="accordion-swiper-navigation">
+                    <div class="accordion-swiper-navigation-prev" id="accordion-swiper-navigation-prev">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" transform="rotate(-180 20 20)" fill="#004879" fill-opacity="0.7"/>
+                            <path d="M18.8296 19.7053C18.6669 19.868 18.6669 20.1319 18.8296 20.2946L23.8388 25.3037C24.3268 25.7918 24.3268 26.5831 23.8388 27.0712V27.0712C23.3507 27.5593 22.5593 27.5593 22.0713 27.0712L16.0376 21.0376C15.4646 20.4645 15.4646 19.5354 16.0376 18.9623L22.0713 12.9287C22.5593 12.4406 23.3507 12.4406 23.8388 12.9287V12.9287C24.3268 13.4168 24.3268 14.2081 23.8388 14.6962L18.8296 19.7053Z" fill="#DFFD35"/>
+                        </svg>  
+                    </div>
+                    <div class="accordion-swiper-pagination" id="accordion-swiper-pagination"></div>
+                    <div class="accordion-swiper-navigation-next" id="accordion-swiper-navigation-next">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="20" fill="#004879" fill-opacity="0.7"/>
+                            <path d="M21.1704 20.2947C21.3331 20.132 21.3331 19.8681 21.1704 19.7054L16.1612 14.6963C15.6732 14.2082 15.6732 13.4169 16.1612 12.9288C16.6493 12.4407 17.4407 12.4407 17.9287 12.9288L23.9624 18.9624C24.5354 19.5355 24.5354 20.4646 23.9624 21.0377L17.9287 27.0713C17.4407 27.5594 16.6493 27.5594 16.1612 27.0713C15.6732 26.5832 15.6732 25.7919 16.1612 25.3038L21.1704 20.2947Z" fill="#DFFD35"/>
+                        </svg>                                
+                    </div>
+                </div>
+
+                    <div class="accordion-swiper accordion-swiper">
+                        <div class="swiper-wrapper">
+                            {% for item in module.right.swiper_content %}
+                                <div class="swiper-slide">
+                                    <figure class="slide-image">
+                                        <img src="{{item.slide_picture.src}}" alt="{{item.slide_picture.alt}}">
+                                    </figure>
+                                    <div class="slide-content">
+                                        <p class="name">{{item.contact_name}}</p>
+                                        <div class="slide-picto-role">
+                                            <img src="{{item.slide_picto.src}}" alt="{{item.slide_picto.alt}}">
+                                            <p>{{item.contact_role}}</p>  
+                                        </div>
+                                        <p class="slide_text">{{item.slide_text_content}}</p>
+                                        <img src="{{item.slide_logo.src}}" alt="{{item.slide_logo.alt}}">
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                
+            {% endif %}
+        </div>
+    </div>
+</section>
