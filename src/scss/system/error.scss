@@ -1,16 +1,28 @@
+section.error-hero{
+    background-color: #002E4D;
+    padding: 175px 0px 150px 0px; 
+    margin-top: -135px;
+    h1{
+        color:$color2;
+        text-align: center;
+        max-width: 540px;
+        margin: 0 auto;
+    }
+}
 section.error-page{
-    padding:250px 0px;
+    padding: 150px 0px;
     div.container{
         display:flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        h1{
-            color:$color1;
-            text-align: center;
+        a{
+            text-decoration: none;
         }
         p{
             text-align: center;
+            width: fit-content;
+            margin: 0px auto 30px auto;
         }
     }
 }

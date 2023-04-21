@@ -1,7 +1,7 @@
 <!--
   templateType: error_page
   isAvailableForNewContent: true
-  label: Boilerplate - 500 error
+  label: Qwincy - 500 error
   screenshotPath: ../../images/template-previews/500.png
 -->
 {% set template_css = "../../css/templates/system.css" %}
@@ -10,10 +10,18 @@
 {% set pageTitle = "Error 500 | Server error" %}
 
 {% block body %}
+<section class="error-hero">
+  <h1>Oups, il semblerait qu'une erreur se soit produite.</h1>
+</section>
 <section class="error-page content-wrapper">
-  <div class="container" data-error="500">
-    <h1>Something isn\'t quite right.</h1>
-    <p>Sorry, an internal server error occurred. But have no fear, we're on the case!</p>
+  <div class="container" data-error="404">
+    <p>Retourner à la page d'accueil ?</p>
+    <a href="/" class="btn primary">
+      <span>Accueil</span>
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="10.5" stroke="#DEFC36"/>
+      </svg> 
+    </a>
   </div>
 </section>
 {% endblock body %}
