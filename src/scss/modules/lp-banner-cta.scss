@@ -42,6 +42,7 @@
             flex-direction: column-reverse;
             align-items: center;
             width: fit-content;
+            max-width: 100%;
         }
         &::after{
             position: absolute;

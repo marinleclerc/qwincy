@@ -50,6 +50,7 @@ form {
                     transition: 0.3s border, 0.3s box-shadow;
                     margin: 0px;
                     box-sizing: border-box;
+                    font-size: 16px;
                     &:active{
                         border-color: $color4;
                     }
@@ -63,6 +64,7 @@ form {
                 }
                 textarea {
                     height: 180px;
+                    font-size: 16px;
                 }
 
                 select {
@@ -72,7 +74,7 @@ form {
                     background-repeat: no-repeat;
                     background-position: right 15px top 50%;
                     background-size: 8px auto;
-
+                    font-size: 16px;
                     width: 100% !important;
                     color: rgba($color1, 1);
                     background: #ffffff;

@@ -16,6 +16,10 @@
             @media screen and (max-width: $size2) {
                 max-width: 100%;
                 margin-right: 0;
+                margin-bottom: 60px;
+            }
+            @media screen and (max-width: $size3) {
+
                 margin-bottom: 30px;
             }
             .title{
@@ -41,7 +45,7 @@
             box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.07);
             border-radius: 5px;
 
-            @media screen and (max-width: $size2) {
+            @media screen and (max-width: $size3) {
                 flex-wrap: wrap;
                 background-color: transparent;
                 justify-content: space-between;
@@ -49,12 +53,17 @@
                 margin: 0 auto;
                 max-width: 350px;
             }
+
+            @media screen and (max-width: $size4) {
+                gap: 15px;
+                justify-content: center;
+            }
             .first-column{
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
                 padding: 55px 30px 0px 30px;
-                @media screen and (max-width: $size2) {
+                @media screen and (max-width: $size3) {
                     width: 100%; 
                     margin-bottom: 30px;
                     padding: 0;
@@ -65,13 +74,13 @@
                     
                     border-bottom: 1px solid rgba(123, 146, 161, 0.4);
                     flex-grow: 1;
-                    @media screen and (max-width: $size2) {
-                        border-bottom: 0;
+                    @media screen and (max-width: $size3) {
+                        border-bottom: 3;
                     }
                     &:last-child{
                         border-bottom: 0;
                     }
-                    @media screen and (max-width:$size2) {
+                    @media screen and (max-width:$size3) {
                         display: none;  
                     }
 
@@ -95,8 +104,9 @@
                     margin: 0 auto;
                     padding-right: 55px;
                     display: none;
-                    @media screen and (max-width: $size2) {
+                    @media screen and (max-width: $size3) {
                         display: block;
+                        width: 100%;
                     }
                     &::after{
                         content: "";
@@ -148,7 +158,7 @@
                 }
                 .responsive-select{
                     display: none;
-                    @media screen and (max-width:$size2) {
+                    @media screen and (max-width:$size3) {
                         display: block; 
                         width: 350px;
                         margin: 0 auto; 
@@ -167,24 +177,26 @@
                 }
             }
             .second-column{
-                height: calc(100% + 60px);
+                margin: -30px 0;
+                
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                transform: translateY(-30px);
+                
                 padding: 85px 30px 30px 30px;
                 background: linear-gradient(0deg, #002E4D, #002E4D), rgba(217, 217, 217, 0.2);
                 box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
                 border-radius: 5px;
                 position: relative;
                 max-width: 165px;
-                @media screen and (max-width:$size2) {
-                    transform: translateY(0px);
+                @media screen and (max-width:$size3) {
                     max-width: 160px;
                     min-height: 160px;
+                    margin: 0;
                 }
                 @media screen and (max-width:$size5) {
                     margin-bottom: 10px;
+
                 }
                 &-logo{
                     position: absolute;
@@ -207,7 +219,7 @@
                     border-bottom: 1px solid rgba(123, 146, 161, 0.4);
                     margin: 0px 30px;
                     transition: all .3s ease;
-                    @media screen and (max-width: $size2) {
+                    @media screen and (max-width: $size3) {
                         opacity: 0;
                         position: absolute;
                         top: 0;
@@ -232,10 +244,9 @@
             }
             .lp-compare-swiper{
                 position: relative;
-                height: 100%;
                 width: 190px;
                 overflow: hidden;
-                @media screen and (max-width:$size2) {
+                @media screen and (max-width:$size3) {
                     background: #D7DEE3;
                     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.1);
                     border-radius: 5px;
@@ -252,7 +263,7 @@
                     inset: 30px auto auto auto;
                     display: flex;
                     z-index: 5;
-                    @media screen and (max-width:$size2) {
+                    @media screen and (max-width:$size3) {
                         display: flex;
                         justify-content: space-between;
                         padding: 0;
@@ -262,13 +273,13 @@
                     }
                     &-prev{
                         margin-right: 85px;
-                        @media screen and (max-width:$size2) {
+                        @media screen and (max-width:$size3) {
                             width: 30px;
                             height: 30px;
                         }
                     }
                     &-next{
-                        @media screen and (max-width:$size2) {
+                        @media screen and (max-width:$size3) {
                             width: 30px;
                             height: 30px;
                         }
@@ -287,7 +298,7 @@
                         &-active{
                             opacity: 1;
                         }
-                        @media screen and (max-width: $size2) {
+                        @media screen and (max-width: $size3) {
                             padding: 85px 30px 30px 30px;
                         }
                         .slide-title{
@@ -319,7 +330,7 @@
                             &:last-child{
                                 border-bottom: 0;
                             }
-                            @media screen and (max-width: $size2) {
+                            @media screen and (max-width: $size3) {
                                 opacity: 0;
                                 position: absolute;
                                 top: 50%;

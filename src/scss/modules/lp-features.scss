@@ -55,6 +55,9 @@
                 @media screen and (max-width:$size1) {
                     margin-right: 0;
                 }
+                @media screen and (max-width:$size3) {
+                    padding: 35px;
+                }
                 &.active{
                     .blue-box-bars{
                         .left-bar{
@@ -216,6 +219,10 @@
                     max-width: 50%;
                     min-width: 310px;
                     gap: 5px;
+                    @media screen and (max-width:$size3) {
+                        max-width: 100% ;
+                        min-width: auto !important;
+                    }
                     &:nth-child(2n){
                         margin-right: 60px;
                         @media screen and (max-width:$size1) {
@@ -243,6 +250,34 @@
                     }
                 }
             }
+        }
+    }
+}
+@supports (-webkit-touch-callout: none) {
+    .lp-features{
+        .container{
+            .top-blue-box{
+                .blue-box-bars{
+                    .left-bar{
+
+                    }
+                    .right-bar{
+                        max-width: var(--percentage) !important;
+                    }
+                }
+                .blue-box-percentages{
+                    .right-percentage{
+                        opacity: 1 !important;
+                        text-align: right !important;
+                    }
+                }
+                .blue-box-texts{
+                    .right-text{
+                        opacity: 1 !important;
+                        text-align: right !important;
+                    }
+                }
+            } 
         }
     }
 }
