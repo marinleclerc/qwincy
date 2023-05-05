@@ -7,7 +7,7 @@
   "license": "MIT",
   "env": {
     "dev": "mtg-dev-alan",
-    "prod": "qwincy"
+    "prod": "mtg-dev-alan"
   },
   "scripts": {
     "clean:dist": "rm -rf dist && mkdir dist ",

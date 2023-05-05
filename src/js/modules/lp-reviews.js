@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     preloadImages: false,
                     spaceBetween: 20,
                     navigation: {
-                        nextEl: ".google-reviews-swiper-navigation-prev",
-                        prevEl: ".google-reviews-swiper-navigation-next",
+                        nextEl: ".google-reviews-swiper-navigation-next",
+                        prevEl: ".google-reviews-swiper-navigation-prev",
                     },
                     lazy: {
                         checkInView: true,

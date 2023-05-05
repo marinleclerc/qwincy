@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         
         ScrollTrigger.create({
             trigger: ".lp-features",
-            start:"top top",
+            start:"top +=300",
             onEnter() {
                 document.querySelector('#animated-blue-box').classList.add('active')
             },

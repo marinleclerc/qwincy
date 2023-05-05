@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     if($(".accordion-swiper").length > 0) {
                         const accordionSwiperFirst = new Swiper('.accordion-swiper', {
                             // Optional parameters
-                            // slidesPerView: 1,
+                            slidesPerView: 1,
                             preloadImages: false,
                             loop: true,
                             effect: "creative",
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                             speed : 500,
                             breakpoints: {
                                 1140: {
+                                    slidesPerView: "auto",
                                     preloadImages: false,
                                     loop: true,
                                     effect: "creative",

@@ -54,6 +54,7 @@
                 margin-right: 130px;
                 @media screen and (max-width:$size1) {
                     margin-right: 0;
+                    max-width:$size1;
                 }
                 @media screen and (max-width:$size3) {
                     padding: 35px;
@@ -161,6 +162,7 @@
                 max-width: 445px;
                 @media screen and (max-width:$size1) {
                     margin-bottom: 30px;
+                    max-width:100%;
                 }
             }
         } 
@@ -172,6 +174,9 @@
             h2{
                 margin-bottom: 60px;
                 max-width: 455px;
+                @media screen and (max-width:$size1) {
+                    max-width: 100%;
+                }
             }
             .bottom-list{
                 border-radius: 30px 30px 0px 0px;
@@ -184,7 +189,7 @@
                 @media screen and (max-width:$size1) {
                     flex-direction: column;
                     align-items: center;
-                    width: fit-content;
+                    width: calc(100% - 40px);
                     padding: 30px 20px 0px 20px;
                     max-width: 100%;
                 }
@@ -219,7 +224,7 @@
                     max-width: 50%;
                     min-width: 310px;
                     gap: 5px;
-                    @media screen and (max-width:$size3) {
+                    @media screen and (max-width:$size1) {
                         max-width: 100% ;
                         min-width: auto !important;
                     }

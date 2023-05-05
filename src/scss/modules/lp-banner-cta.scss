@@ -41,7 +41,7 @@
         @media screen and (max-width:$size1) {
             flex-direction: column-reverse;
             align-items: center;
-            width: fit-content;
+            width: 100%;
             max-width: 100%;
         }
         &::after{
@@ -68,7 +68,7 @@
             align-items: flex-end;
             @media screen and (max-width:$size1) {
                 padding-right: 0px;
-                width: fit-content;
+                width: 100%;
             }
             .banner-picture{
                 width: 420px;
@@ -95,6 +95,7 @@
             @media screen and (max-width:$size1) {
                 padding: 20px 20px 0px 20px;
                 margin-bottom: 5px;
+                max-width: 100%;
             }
             .banner-text-content{
                 margin-bottom: 30px;

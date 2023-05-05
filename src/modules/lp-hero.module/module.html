@@ -97,11 +97,16 @@
                                                 
                                                 $(formid + ' .from-step-line').each(function(contentIndex){
                                                     console.log($(this))
+                                                    if(contentIndex < lineIndex){
+                                                        $(this).addClass('completed')
+                                                    }else{
+                                                        $(this).removeClass('completed')
+                                                    }
                                                     if(contentIndex == lineIndex){
-                                                        $(this).addClass('active').fadeIn(500);
+                                                        $(this).addClass('active')
                                                     }
                                                     else{
-                                                        $(this).removeClass('active').fadeOut(500)  
+                                                        $(this).removeClass('active')
                                                     }
                                                 })
                                                 $(formid + ' .from-step-outer').each(function(outerIndex){
